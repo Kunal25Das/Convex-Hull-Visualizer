@@ -69,11 +69,17 @@ export default function Home() {
                         description="Computer Science and Engineering (2022-26)"
                         borderColor="bg-blue-500"
                     />
+                    <a href="https://github.com/Kunal25Das/Convex-Hull-Visualizer" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="block">
                     <Card 
                         title="GitHub Repository" 
                         description="Convex Hull Visualizer" 
                         borderColor="bg-purple-500"
                     />
+
+                    </a>
                 </div>
 
                 <div className="flex-grow flex justify-center">
