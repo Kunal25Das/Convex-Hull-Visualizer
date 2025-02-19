@@ -6,6 +6,8 @@ export default function ConvexHull({ points, hull }) {
       useEffect(() => {
             const canvas = canvasRef.current;
             const ctx = canvas.getContext('2d');
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             // Draw points 
@@ -42,5 +44,5 @@ export default function ConvexHull({ points, hull }) {
             }
       }, [points, hull]);
 
-      return <canvas ref={canvasRef} width={500} height={500} style={{ border: '1px solid black' }} />;
+      return <canvas ref={canvasRef} style={{ width: '100%', height: '100%', border: '1px solid black' }} />;
 }
