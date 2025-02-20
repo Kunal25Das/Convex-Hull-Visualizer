@@ -89,7 +89,7 @@ export default function Home() {
                                           Plotted Points:
                                     </h2>
                                     {/* Scrollable list container */}
-                                    <div className="max-h-60 overflow-y-auto  rounded-lg p-2">
+                                    <div className="max-h-[60vh] overflow-y-auto  rounded-lg p-2">
                                     <ul className="space-y-1">
                                                 {points.map((p, index) => {
                                                       // Check if (p.x, p.y) exists in hull by comparing values
