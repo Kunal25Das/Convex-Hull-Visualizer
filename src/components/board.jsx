@@ -55,10 +55,6 @@ export default function ConvexHull({ points, hull }) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
 
-        function clearOverlay() {
-            ctxOverlay.clearRect(0, 0, overlay.width, overlay.height);
-        }
-
         drawBackdrop();
 
         if (hull.length < 2) return;
