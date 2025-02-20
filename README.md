@@ -1,6 +1,6 @@
 # Convex Hull Visualizer
 
-An interactive **Convex Hull Visualizer** built with **Next.js & React**, designed to help students understand the **Jarvis March (Gift Wrapping) algorithm**. It features an interactive **draggable graph grid**, allowing users to dynamically add points, compute the convex hull, and reset the visualization.
+An interactive **Convex Hull Visualizer** built with **Next.js & React**, designed to help students understand the **Jarvis March (Gift Wrapping) algorithm**. It features an interactive **graph grid**, allowing users to dynamically add points, compute the convex hull, and reset the visualization.
 
 ## 🚀 Features
 - 📍 **Click to Add Points**  
