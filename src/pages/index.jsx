@@ -7,6 +7,7 @@ export default function Home() {
       const [points, setPoints] = useState([]);
       const [hull, setHull] = useState([]);
       const [disabled, setDisabled] = useState(false);
+      const [cancelDisabled, setCancelDisabled] = useState(true);
       const [animationSpeed, setAnimationSpeed] = useState(500);
       const [isPaused, setIsPaused] = useState(false);
       const containerRef = useRef(null);
@@ -40,6 +41,7 @@ export default function Home() {
             setPoints([]);
             setHull([]);
             setDisabled(false);
+            setCancelDisabled(true);
       };
 
       return (
@@ -79,7 +81,7 @@ export default function Home() {
                                     className="border-2 border-black cursor-crosshair bg-white h-[68vh] w-full max-w-3xl relative overflow-hidden"
                                     onClick={addPoint}
                               >
-                                    <ConvexHull points={points} hull={hull} />
+                                    <ConvexHull points={points} hull={hull} onAnimationEnd={() => setCancelDisabled(false)}/>
                               </div>
                         </div>
 
@@ -107,22 +109,34 @@ export default function Home() {
                               </div>
                         </div>
                   </div>
-                  <div className="flex flex-col sm:flex-row justify-center gap-3 mb-4">
-                        <button
-                              onClick={computeHull}
-                              disabled={disabled}
-                              className={`px-5 py-2 rounded-lg shadow-md transition ${disabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'
-                                    }`}
-                        >
-                              Compute Convex Hull
-                        </button>
-                        <button
-                              onClick={clearScreen}
-                              className="px-5 py-2 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-700 transition"
-                        >
-                              Clear Screen
-                        </button>
-                  </div>
+                  { ( !disabled || !cancelDisabled ) ?
+                        (<div className="flex flex-col sm:flex-row justify-center gap-3 mb-4">
+                              <button
+                                    onClick={computeHull}
+                                    disabled={disabled}
+                                    className={`px-5 py-2 rounded-lg shadow-md transition ${disabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'
+                                          }`}
+                              >
+                                    Compute Convex Hull
+                              </button>
+                              <button
+                                    onClick={clearScreen}
+                                    disabled={cancelDisabled}
+                                    className={`px-5 py-2  rounded-lg shadow-md transition ${cancelDisabled ? 'bg-gray-400 cursor-not-allowed' : ' bg-red-600 text-white hover:bg-red-700'
+                                          }`}
+                              >
+                                    Clear Screen
+                              </button>
+                        </div>
+                        ) :(
+                              <div className="flex justify-center items-center mb-4">
+                                    <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-md">
+                                          <div className="animate-spin h-5 w-5 border-4 border-blue-500 border-t-transparent rounded-full"></div>
+                                          <span className="text-blue-500 font-semibold">Processing...</span>
+                                    </div>
+                              </div>
+                        )
+                  }
                   <Footer/>
             </div>
       );

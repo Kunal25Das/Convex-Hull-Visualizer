@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function ConvexHull({ points, hull }) {
+export default function ConvexHull({ points, hull, onAnimationEnd }) {
     const backdropRef = useRef(null);
     const canvasRef = useRef(null);
     const overlayRef = useRef(null); // New overlay canvas
@@ -60,6 +60,11 @@ export default function ConvexHull({ points, hull }) {
         if (hull.length < 2) return;
 
         function drawNextStep() {
+            if (indexRef.current >= hull.length) {
+                if (onAnimationEnd) onAnimationEnd(); // Signal parent when animation is over
+                return;
+            }
+
             if (indexRef.current >= hull.length) return;
         
             clearCanvas(); // Clear the middle canvas but NOT the backdrop or overlay.
