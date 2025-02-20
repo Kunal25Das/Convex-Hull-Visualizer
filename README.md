@@ -1,52 +1,116 @@
-# Convex Hull Visualizer
+# 🎨 **Convex Hull Visualizer** 🚀  
 
-An interactive **Convex Hull Visualizer** built with **Next.js & React**, designed to help students understand the **Jarvis March (Gift Wrapping) algorithm**. It features an interactive **graph grid**, allowing users to dynamically add points, compute the convex hull, and reset the visualization.
+[![Made with Next.js](https://img.shields.io/badge/Made%20with-NextJs-61DAFB.svg)](https://nextjs.org/)  
+[![Powered by JavaScript](https://img.shields.io/badge/Powered%20by-JavaScript-F7DF1E.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  
+[![Styled with Tailwind](https://img.shields.io/badge/Styled%20with-TailwindCSS-38B2AC.svg)](https://tailwindcss.com/)  
 
-## 🚀 Features
-- 📍 **Click to Add Points**  
-- 📈 **Compute Convex Hull** using **Jarvis March Algorithm**  
-- 📌 **List of Hull Points** 
-- 🧹 **Clear Screen** to reset points and the hull  
-- 🎨 **UI** with **Next.js & TailwindCSS**  
+🔍 An interactive **Convex Hull Visualizer** built with **Next.js & React**, designed to help students understand the **Jarvis March (Gift Wrapping) algorithm**. It features an interactive **graph grid**, allowing users to dynamically add points, compute the convex hull, and reset the visualization.
 
-## 🛠️ Installation & Setup
-1. Clone the repository and install dependencies:
-   ```sh
-   git clone https://github.com/yourusername/convex-hull-visualizer.git
-   cd convex-hull-visualizer
-   npm install
+<!-- ![Convex Hull Preview](/public/preview.png)   -->
 
+---
 
-## Getting Started
+## 🚀 **Features**
+✅ 📍 **Click to Add Points** – Place points dynamically on the graph  
+✅ 📈 **Compute Convex Hull** – Uses the **Jarvis March** algorithm  
+✅ 👟 **Step-by-Step Visualization** – Watch the algorithm in action  
+<!-- ✅ **🎧 Adjustable Animation Speed** – Control the speed from **0.5x to 4x**  ✅ **⏸️ Play/Pause Animation** – Stop and resume anytime   -->
+✅ 📌 **Live Hull Points List** – View the points forming the convex hull  
+✅ 🧹 **Reset Screen** – Start over with a clean board  
+✅ ⚡**Responsive** – Works on **most devices**
+✅ 🎨 **UI** with **Next.js & TailwindCSS**  
 
-First, run the development server:
+---
 
-```bash
+## 🎮 **How to Use**
+**1️⃣ Click anywhere on the graph area** to place points 🔵  
+**2️⃣ Press "Compute Convex Hull"** to start the visualization 🚀  
+**3️⃣ Watch the magic happen!** 🥣 Points are analyzed, 🟢 hull edges form, 🔴 final hull points are marked  
+**4️⃣ Clear screen** and try again! 🪚  
+
+---
+
+## 🛠️ **Installation & Setup**
+📦 **Prerequisites:**  
+- 🖥️ Node.js (v14+ recommended)  
+- 📦 npm or yarn  
+
+### **1️⃣ Clone this repository**  
+```sh
+git clone https://github.com/Kunal25Das/Convex-Hull-Visualizer.git
+cd convex-hull-visualizer
+```
+
+### **2️⃣ Install dependencies**  
+```sh
+npm install
+# or
+yarn install
+```
+
+### **3️⃣ Run the development server**  
+```sh
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔗 Open **[http://localhost:3000](http://localhost:3000)** in your browser!  
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 🎨 **Color Legend**
+| **Color** | **Meaning** |
+|-----------|------------|
+| 🔵 **Blue** | Regular points |
+| 🟣 **Purple** | Current base point |
+| 🟢 **Green** | Hull edge being confirmed |
+| 🔴 **Red** | Final convex hull points |
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 **How It Works (Jarvis March Algorithm)**
+**1️⃣ Start with the leftmost point**  
+**2️⃣ Find the most counterclockwise point** at each step  
+**3️⃣ Continue wrapping around the points** until you return to the start  
+**4️⃣ Boom! 🎉 Convex hull formed!**  
 
-## Learn More
+💡 **Fun Fact:** This algorithm runs in **O(nh) time complexity**, where **n** is the number of points, and **h** is the number of hull points.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## 🔧 **Tech Stack**
+- **⚛️ Next.js** – Modern React framework  
+- **🎨 Tailwind CSS** – Beautiful & responsive UI  
+- **✒️ Canvas API** – For dynamic visualizations  
+- **🎗️ FontAwesome** – Icons & styling  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
+## 🤝 **Contributing**
+🎉 We welcome contributions! Want to add a feature or improve UI? Follow these steps:  
+
+**1️⃣ Fork the repo** 🍔  
+**2️⃣ Create a new branch** 🔄  
+**3️⃣ Make changes & commit** 💾  
+**4️⃣ Push and submit a PR** 🚀  
+
+---
+
+## 📩 **Connect with me 🤗**
+💬 Have questions? Found a bug? Feel free to reach out!  
+
+[📧 **Email**](mailto:dev.kunal.das@gmail.com)  
+[🐦 **X**](https://x.com/_hit0ru_)  
+[🧵 **Threads**](https://www.threads.net/@_.hitoru._)   
+[🪇 **Instagram**][def] 
+
+📌 **If you like this project, don’t forget to ⭐ star it on GitHub!** 🌟  
+
+---
+
+Made with ❤️ by **[Kunal Das](https://github.com/Kunal25Das)**  
+🚀 **Happy Coding!** 🚀  
+
+
+[def]: https://www.instagram.com/_.hitoru._/
