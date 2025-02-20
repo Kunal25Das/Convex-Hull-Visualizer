@@ -3,7 +3,7 @@ import { faGithub, faTwitter, faThreads, faInstagram } from '@fortawesome/free-b
 
 export default function Footer() {
       return (
-            <footer className="w-full p-1 bg-gray-900 flex flex-col-reverse justify-center gap-4 sm:flex-row">
+            <footer className="w-full p-1 bg-gray-900 flex flex-col-reverse justify-center gap-4 sm:flex-row border  border-gray-900 rounded-lg">
                   <div className="w-1/3 text-slate-300">
                   <p>@ Kunal Das</p>
                   <p>Computer Science and Engineering (2022-26) </p>
