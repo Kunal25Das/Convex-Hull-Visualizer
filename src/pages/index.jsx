@@ -48,28 +48,14 @@ export default function Home() {
                         Convex Hull Visualizer
                   </h1>
 
-                  <div className="flex flex-col sm:flex-row justify-center gap-3 mb-4">
-                        <button
-                              onClick={computeHull}
-                              disabled={disabled}
-                              className={`px-5 py-2 rounded-lg shadow-md transition ${disabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'
-                                    }`}
-                        >
-                              Compute Convex Hull
-                        </button>
-                        <button
-                              onClick={clearScreen}
-                              className="px-5 py-2 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-700 transition"
-                        >
-                              Clear Screen
-                        </button>
-                  </div>
 
                   <div className="flex flex-col lg:flex-row gap-6 max-w-7xl pb-6  mx-auto">
                         <div className="max-w-full lg:w-64 flex flex-col gap-6 mx-4">
                               <Card
-                                    title="Kunal Das"
-                                    description="Computer Science and Engineering (2022-26)"
+                                    title="Instruction"
+                                    description="📌 add points by clicking on the graph area"
+                                    description1="🔴 red pionts are hull points"
+                                    description2="🟣 purple points shows the current base point"
                                     borderColor="bg-blue-500"
                               />
                               <a href="https://github.com/Kunal25Das/Convex-Hull-Visualizer"
@@ -80,6 +66,8 @@ export default function Home() {
                                     <Card
                                           title="GitHub Repository"
                                           description="Convex Hull Visualizer"
+                                          description1=""
+                                          description2=""
                                           borderColor="bg-purple-500"
                                     />
                               </a>
@@ -98,17 +86,42 @@ export default function Home() {
                         <div className="w-full lg:w-64">
                               <div className="lg:sticky lg:top-6">
                                     <h2 className="text-lg text-black font-semibold mb-3">
-                                          Convex Hull Points:
+                                          Plotted Points:
                                     </h2>
+                                    {/* Scrollable list container */}
+                                    <div className="max-h-60 overflow-y-auto  rounded-lg p-2">
                                     <ul className="space-y-1">
-                                          {hull.map((p, index) => (
-                                                <li key={index} className="text-blue-600">
-                                                      ({p.x.toFixed(2)}, {p.y.toFixed(2)})
-                                                </li>
-                                          ))}
-                                    </ul>
+                                                {points.map((p, index) => {
+                                                      // Check if (p.x, p.y) exists in hull by comparing values
+                                                      const isHullPoint = hull.some(h => h.x === p.x && h.y === p.y);
+
+                                                      return (
+                                                            <li key={index} className={isHullPoint ? "text-red-600" : "text-blue-600"}>
+                                                                  ({p.x.toFixed(2)}, {p.y.toFixed(2)})
+                                                            </li>
+                                                      );
+                                                })}
+                                          </ul>
+
+                                    </div>
                               </div>
                         </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row justify-center gap-3 mb-4">
+                        <button
+                              onClick={computeHull}
+                              disabled={disabled}
+                              className={`px-5 py-2 rounded-lg shadow-md transition ${disabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'
+                                    }`}
+                        >
+                              Compute Convex Hull
+                        </button>
+                        <button
+                              onClick={clearScreen}
+                              className="px-5 py-2 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-700 transition"
+                        >
+                              Clear Screen
+                        </button>
                   </div>
                   <Footer/>
             </div>
