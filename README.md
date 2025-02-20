@@ -5,7 +5,7 @@ An interactive **Convex Hull Visualizer** built with **Next.js & React**, design
 ## 🚀 Features
 - 📍 **Click to Add Points**  
 - 📈 **Compute Convex Hull** using **Jarvis March Algorithm**  
-- 📌 **List of Hull Points** displayed on the right panel  
+- 📌 **List of Hull Points** 
 - 🧹 **Clear Screen** to reset points and the hull  
 - 🎨 **UI** with **Next.js & TailwindCSS**  
 
