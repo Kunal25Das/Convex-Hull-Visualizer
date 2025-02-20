@@ -75,7 +75,7 @@ export default function Home() {
                               </a>
                         </div>
 
-                        <div className="flex-grow flex justify-center">
+                        <div className="flex-grow flex flex-col justify-center space-y-3">
                               <div
                                     ref={containerRef}
                                     className="border-2 border-black cursor-crosshair bg-white h-[68vh] w-full max-w-3xl relative overflow-hidden"
@@ -83,33 +83,7 @@ export default function Home() {
                               >
                                     <ConvexHull points={points} hull={hull} onAnimationEnd={() => setCancelDisabled(false)}/>
                               </div>
-                        </div>
-
-                        <div className="w-full lg:w-64">
-                              <div className="lg:sticky lg:top-6">
-                                    <h2 className="text-lg text-black font-semibold mb-3">
-                                          Plotted Points:
-                                    </h2>
-                                    {/* Scrollable list container */}
-                                    <div className="max-h-[60vh] overflow-y-auto  rounded-lg p-2">
-                                    <ul className="space-y-1">
-                                                {points.map((p, index) => {
-                                                      // Check if (p.x, p.y) exists in hull by comparing values
-                                                      const isHullPoint = hull.some(h => h.x === p.x && h.y === p.y);
-
-                                                      return (
-                                                            <li key={index} className={isHullPoint ? "text-red-600" : "text-blue-600"}>
-                                                                  ({p.x.toFixed(2)}, {p.y.toFixed(2)})
-                                                            </li>
-                                                      );
-                                                })}
-                                          </ul>
-
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-                  { ( !disabled || !cancelDisabled ) ?
+                              { ( !disabled || !cancelDisabled ) ?
                         (<div className="flex flex-col sm:flex-row justify-center gap-3 mb-4">
                               <button
                                     onClick={computeHull}
@@ -137,6 +111,32 @@ export default function Home() {
                               </div>
                         )
                   }
+                        </div>
+
+                        <div className="w-full lg:w-64">
+                              <div className="lg:sticky lg:top-6">
+                                    <h2 className="text-lg text-black font-semibold mb-3">
+                                          Plotted Points:
+                                    </h2>
+                                    {/* Scrollable list container */}
+                                    <div className="max-h-[60vh] overflow-y-auto  rounded-lg p-2">
+                                    <ul className="space-y-1">
+                                                {points.map((p, index) => {
+                                                      // Check if (p.x, p.y) exists in hull by comparing values
+                                                      const isHullPoint = hull.some(h => h.x === p.x && h.y === p.y);
+
+                                                      return (
+                                                            <li key={index} className={isHullPoint ? "text-red-600" : "text-blue-600"}>
+                                                                  ({p.x.toFixed(2)}, {p.y.toFixed(2)})
+                                                            </li>
+                                                      );
+                                                })}
+                                          </ul>
+
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
                   <Footer/>
             </div>
       );
