@@ -17,7 +17,7 @@
 <!-- ✅ **🎧 Adjustable Animation Speed** – Control the speed from **0.5x to 4x**  ✅ **⏸️ Play/Pause Animation** – Stop and resume anytime   -->
 ✅ 📌 **Live Hull Points List** – View the points forming the convex hull  
 ✅ 🧹 **Reset Screen** – Start over with a clean board  
-✅ ⚡**Responsive** – Works on **most devices**
+✅ ⚡**Responsive** – Works on **most devices**  
 ✅ 🎨 **UI** with **Next.js & TailwindCSS**  
 
 ---
